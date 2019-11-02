@@ -1,17 +1,21 @@
 "use strict";
 
 const Homey = require("homey");
-const { HomeyAPI } = require("athom-api");
 const { getLightDevices, getDeviceByDeviceId } = require("./lib/api.js");
 
 class MyApp extends Homey.App {
   async onInit() {
-    this.log("MyApp is running...");
+    this.log("Hue emulator is running...");
+    this.scheduleGetLights();
+  }
 
-    this.lights = await getLightDevices(this);
+  scheduleGetLights() {
+    getLightDevices(this);
+    setTimeout(() => this.scheduleGetLights(), 1000 * 30);
   }
 
   apiGetLightDevices(args) {
+    console.log('lights api called');
     return this.lights ? this.lights : {};
   }
 }
