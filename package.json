@@ -1,0 +1,22 @@
+{
+  "name": "com.hue.emulator",
+  "version": "1.0.0",
+  "description": "Expose Homey device using Hue API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llanen/com.hue.emulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llanen/com.hue.emulator/issues"
+  },
+  "homepage": "https://github.com/llanen/com.hue.emulator#readme",
+  "dependencies": {
+    "athom-api": "~2.1.217"
+  }
+}

@@ -9,10 +9,8 @@
   "description": {
     "en": "Expose Homey device using Hue API"
   },
-  "category": [
-    "appliances"
-  ],
-  "permissions": [],
+  "category": ["appliances"],
+  "permissions": ["homey:manager:api"],
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
