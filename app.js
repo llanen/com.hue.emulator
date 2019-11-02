@@ -1,7 +1,8 @@
 "use strict";
 
 const Homey = require("homey");
-const { getLightDevices, getDeviceByDeviceId } = require("./lib/api.js");
+const { ManagerSettings } = require('homey');
+const { getLightDevices, setLightDevice } = require("./lib/api.js");
 
 class MyApp extends Homey.App {
   async onInit() {
@@ -17,6 +18,12 @@ class MyApp extends Homey.App {
   apiGetLightDevices(args) {
     console.log('lights api called');
     return this.lights ? this.lights : {};
+  }
+
+  apiSetLightState(lightId, body) {
+    // Don't wait for the result just return success, as Toon will not handle errors anyway
+    setLightDevice(this, lightId, body);
+    return [{}]
   }
 }
 

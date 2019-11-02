@@ -11,5 +11,16 @@ module.exports = [
       if (result instanceof Error) return callback(result);
       return callback(null, result);
     }
-  }
+  },
+
+  {
+    method: 'PUT',
+    path: '/lights/:id/state',
+    public: true,
+    fn: (args, callback) => {
+        var result = Homey.app.apiSetLightState(args.params.id, args.body);
+        if(result instanceof Error) return callback(result);
+        return callback(null, result);
+    }
+},
 ];
